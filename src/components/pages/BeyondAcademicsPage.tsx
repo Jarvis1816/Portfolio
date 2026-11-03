@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { motion } from 'motion/react';
 import { 
   Trophy, 
@@ -19,11 +19,6 @@ interface BeyondAcademicsPageProps {
 }
 
 export const BeyondAcademicsPage: React.FC<BeyondAcademicsPageProps> = ({ onNavigateTo }) => {
-  const [activeSquare, setActiveSquare] = useState<string | null>('e4');
-
-  const files = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h'];
-  const ranks = [8, 7, 6, 5, 4, 3, 2, 1];
-
   return (
     <div className="w-full max-w-5xl mx-auto px-4 sm:px-6 py-12 sm:py-16 text-[#111114]">
       
@@ -100,59 +95,31 @@ export const BeyondAcademicsPage: React.FC<BeyondAcademicsPageProps> = ({ onNavi
             </p>
           </div>
 
-          {/* Right: Minimalist Chessboard Pattern & Knight Illustration */}
+          {/* Right: Looping 3D Chess Motion Video from Pinterest */}
           <div className="lg:col-span-5 flex flex-col items-center justify-center">
-            <div className="relative p-4 rounded-2xl bg-[#111114] border border-white/10 shadow-xl text-white">
+            <div className="relative w-full max-w-[280px] sm:max-w-[320px] aspect-[9/14] rounded-2xl overflow-hidden bg-[#111114] border-2 border-[#111114]/25 shadow-2xl group">
               
-              {/* Knight Motif Header */}
-              <div className="flex items-center justify-between pb-3 mb-3 border-b border-white/10 text-xs font-mono text-[#A8A0B8]">
-                <span className="text-[#FF4D36] flex items-center gap-1.5 font-bold uppercase">
-                  <span>♘</span> Tactical Board Position
-                </span>
-                <span className="text-[11px]">{activeSquare} selected</span>
+              {/* Header Badge */}
+              <div className="absolute top-3 left-3 z-10 px-2.5 py-1 rounded bg-black/80 backdrop-blur-md text-[10px] font-mono text-white flex items-center gap-2 font-bold uppercase tracking-wider">
+                <span className="text-[#FF4D36]">♘</span>
+                <span>CHESS MOTION // LOOP</span>
               </div>
 
-              {/* Minimal 8x8 Chessboard */}
-              <div className="grid grid-cols-8 gap-[2px] w-[240px] sm:w-[260px] aspect-square rounded-lg overflow-hidden border border-white/10 bg-[#25232A]">
-                {ranks.map((r) =>
-                  files.map((f) => {
-                    const coord = `${f}${r}`;
-                    const isDark = (f.charCodeAt(0) + r) % 2 === 0;
-                    const isKnightPos = coord === 'e4';
-                    const isSelected = activeSquare === coord;
+              {/* Looping Chess Video */}
+              <video
+                src="/assets/videos/chess_motion.mp4"
+                autoPlay
+                loop
+                muted
+                playsInline
+                preload="auto"
+                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+              />
 
-                    return (
-                      <button
-                        key={coord}
-                        onClick={() => {
-                          soundFX.playHover();
-                          setActiveSquare(coord);
-                        }}
-                        className={`relative flex items-center justify-center text-xs font-mono transition-colors cursor-pointer ${
-                          isSelected
-                            ? 'bg-[#FF4D36] text-white'
-                            : isDark
-                            ? 'bg-[#19181E] text-white/40 hover:bg-[#2B2933]'
-                            : 'bg-[#2E2C35] text-white/60 hover:bg-[#3D3A45]'
-                        }`}
-                        title={coord}
-                      >
-                        {isKnightPos && (
-                          <span className="text-base sm:text-lg text-[#FF4D36] font-bold">
-                            ♘
-                          </span>
-                        )}
-                        {!isKnightPos && coord === 'f6' && (
-                          <span className="text-sm text-white/70">♞</span>
-                        )}
-                      </button>
-                    );
-                  })
-                )}
-              </div>
-
-              <div className="mt-3 text-center text-[10px] font-mono text-[#A8A0B8]">
-                White to move · Positional Analysis
+              {/* Bottom Subtle Overlay */}
+              <div className="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent p-3 pt-8 text-[11px] font-mono text-white flex items-center justify-between">
+                <span>TACTICAL DEPTH</span>
+                <span className="text-[#FF4D36] font-bold">FIDE 1505</span>
               </div>
             </div>
           </div>

@@ -135,13 +135,13 @@ export const ExperiencePage: React.FC<ExperiencePageProps> = ({ onNavigateTo }) 
             <div className="lg:col-span-5 relative">
               <div className="relative rounded-xl overflow-hidden border border-[#111114]/20 bg-[#111114] shadow-md">
                 <img
-                  src="/src/assets/images/ola_ml_internship_visual_1793689908671.jpg"
-                  alt="OLA Machine Learning Telematics & Regression Visualization"
-                  className="w-full aspect-[16/10] object-cover"
+                  src="/assets/aistudio/image_c9cfca54.png"
+                  alt="OLA Office & Machine Learning Internship"
+                  className="w-full aspect-[16/10] object-cover object-center"
                 />
                 <div className="p-3.5 bg-[#111114] border-t border-white/10 text-xs text-[#B3ADBE]">
-                  <span className="text-[#FF4D36] font-semibold block uppercase">Vehicle Telematics & Regression</span>
-                  Real-world application of SQL query pipelines and Python predictive regression modeling.
+                  <span className="text-[#FF4D36] font-semibold block uppercase">OLA Electric & Mobility</span>
+                  Machine Learning Internship · Vehicle fleet telemetry & regression modeling.
                 </div>
               </div>
             </div>
@@ -151,16 +151,16 @@ export const ExperiencePage: React.FC<ExperiencePageProps> = ({ onNavigateTo }) 
         </div>
       </motion.div>
 
-      {/* SECTION 2: Academic Projects – WonderLab Sentinel */}
+      {/* SECTION 2: Academic Projects – Smart Park */}
       <div className="mb-8">
         <span className="text-xs font-mono tracking-widest text-[#FF4D36] uppercase block mb-1 font-bold">
           Academic Project Spotlight
         </span>
         <h2 className="font-heading text-3xl sm:text-4xl font-black text-[#111114] uppercase">
-          WonderLab Sentinel
+          Smart Park
         </h2>
         <p className="text-sm text-[#6B6675] mt-1 font-normal">
-          Mathematics Experiential Learning Project based on the Wonderla amusement park.
+          AI-Powered Theme Park Analytics & Mathematics Experiential Learning System.
         </p>
       </div>
 
@@ -178,13 +178,13 @@ export const ExperiencePage: React.FC<ExperiencePageProps> = ({ onNavigateTo }) 
             <div className="lg:col-span-6 relative">
               <div className="relative rounded-xl overflow-hidden border border-[#111114]/20 bg-[#111114] shadow-md group-hover:border-[#FF4D36] transition-all">
                 <img
-                  src="/src/assets/images/wonderlab_sentinel_preview_1793689907908.jpg"
-                  alt="WonderLab Sentinel Project Preview"
+                  src="/assets/aistudio/image_eada5d06.png"
+                  alt="Smart Park AI Analytics Project Preview"
                   className="w-full aspect-[16/10] object-cover filter contrast-[1.02] group-hover:scale-102 transition-transform duration-700"
                 />
                 <div className="absolute top-3 left-3 px-2.5 py-1 rounded bg-[#111114]/90 backdrop-blur-md border border-white/20 text-[11px] font-mono text-white flex items-center gap-1.5 uppercase font-semibold">
                   <Ticket size={12} className="text-[#FF4D36]" />
-                  <span>Interactive Park & Booking</span>
+                  <span>AI Analytics & Park Experience</span>
                 </div>
               </div>
             </div>
@@ -193,32 +193,32 @@ export const ExperiencePage: React.FC<ExperiencePageProps> = ({ onNavigateTo }) 
             <div className="lg:col-span-6 space-y-4">
               <div className="flex flex-wrap items-center gap-2">
                 <span className="px-2.5 py-0.5 rounded bg-[#111114] text-xs font-mono text-white font-semibold uppercase">
-                  Mathematics Experiential Learning
+                  Mathematics & AI Analytics
                 </span>
                 <span className="text-xs font-mono text-[#6B6675]">College Academic Project</span>
               </div>
 
               <h3 className="font-heading text-2xl font-black text-[#111114] uppercase">
-                WonderLab Sentinel
+                Smart Park
               </h3>
 
               <p className="text-sm text-[#2C2836] font-normal leading-relaxed">
-                WonderLab Sentinel is a college mathematics experiential learning project conceived around the Wonderla amusement park. The application combines mathematical modeling with customer experience engineering.
+                Smart Park is an experiential learning project conceived around theme park analytics and guest experience engineering. The application combines mathematical crowd modeling, ride wait-time analytics, and customer experience systems.
               </p>
 
               {/* Core capabilities */}
               <div className="space-y-2 pt-1 text-xs text-[#6B6675]">
                 <div className="flex items-start gap-2">
                   <CheckCircle2 size={15} className="text-[#FF4D36] shrink-0 mt-0.5" />
-                  <span><strong className="text-[#111114]">Attraction & Ride Explorer:</strong> Allows visitors to explore rides, thrill levels, and park activities in an immersive digital environment.</span>
+                  <span><strong className="text-[#111114]">Zone & Ride Intelligence:</strong> Explores thrill zones, water rides, family zones, and real-time operational capacity metrics.</span>
                 </div>
                 <div className="flex items-start gap-2">
                   <CheckCircle2 size={15} className="text-[#FF4D36] shrink-0 mt-0.5" />
-                  <span><strong className="text-[#111114]">Pre-Visit Insight:</strong> Gives customers a clear sense of available experiences, park amenities, and timings before visiting.</span>
+                  <span><strong className="text-[#111114]">Crowd & Wait-Time Analytics:</strong> Real-time estimation of wait times (18 min average) and visitor volume flow modeling.</span>
                 </div>
                 <div className="flex items-start gap-2">
                   <CheckCircle2 size={15} className="text-[#FF4D36] shrink-0 mt-0.5" />
-                  <span><strong className="text-[#111114]">Convenient Ticket Booking:</strong> Combines real-world mathematical booking computations and customer admission logic.</span>
+                  <span><strong className="text-[#111114]">Interactive Experience System:</strong> Digital navigation, park map distribution, and intuitive visitor admission workflows.</span>
                 </div>
               </div>
 

@@ -45,7 +45,7 @@ def skills():
 
 @app.route('/experience')
 def experience():
-    """Renders OLA ML Internship & WonderLab Sentinel Project"""
+    """Renders OLA ML Internship & Smart Park Project"""
     return render_template('experience.html', data=PORTFOLIO_DATA)
 
 @app.route('/beyond')

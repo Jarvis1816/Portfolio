@@ -5,7 +5,7 @@ import { soundFX } from '../../utils/audio';
 
 const PRESENTATION_CALLOUTS = [
   '“Behold! The Production Machine Learning Models!”',
-  '“Presenting: WonderLab Sentinel & OLA Fleet Telematics!”',
+  '“Presenting: Smart Park & OLA Fleet Telematics!”',
   '“Engineered with SQL, Python & Predictive Regression!”',
   '“Built with mathematical rigor & real fleet datasets!”',
 ];

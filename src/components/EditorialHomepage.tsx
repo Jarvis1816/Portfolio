@@ -58,7 +58,7 @@ export const EditorialHomepage: React.FC<EditorialHomepageProps> = ({
       route: '/experience',
       number: '03',
       title: 'EXPERIENCE & LABS',
-      subtitle: 'OLA ML Intern · WonderLab',
+      subtitle: 'OLA ML Intern · Smart Park',
       tag: 'PROJECTS',
       rotation: -2,
       zIndex: 30,
@@ -106,14 +106,17 @@ export const EditorialHomepage: React.FC<EditorialHomepageProps> = ({
       {/* ============================================================== */}
       {/* 1. UPPER EDITORIAL HERO SECTION                                */}
       {/* ============================================================== */}
-      <section className="relative w-full pt-10 sm:pt-14 pb-20 sm:pb-32 px-4 sm:px-8 max-w-7xl mx-auto overflow-hidden">
+      <section className="relative w-full pt-8 sm:pt-12 pb-16 sm:pb-24 px-4 sm:px-8 max-w-7xl mx-auto overflow-hidden">
         
-        {/* Subtle geometric crosshairs & stamp markers from video */}
-        <div className="absolute top-6 left-6 text-[10px] font-mono text-[#6B6675] tracking-widest hidden sm:block">
-          + LAT: 12.9716° N / LON: 77.5946° E
-        </div>
-        <div className="absolute top-6 right-6 text-[10px] font-mono text-[#6B6675] tracking-widest hidden sm:block">
-          + AI & ML EDITION // 2026
+        {/* Subtle top metadata bar */}
+        <div className="flex items-center justify-between mb-6 pb-3 border-b border-[#111114]/10 text-[10px] font-mono text-[#6B6675] tracking-widest">
+          <div className="flex items-center gap-3">
+            <span className="uppercase font-medium text-[#111114]">BENGALURU, KARNATAKA</span>
+          </div>
+          <div className="flex items-center gap-3">
+            <span className="px-2 py-0.5 rounded bg-[#111114] text-white font-semibold">CLASS OF '28</span>
+            <span className="hidden sm:inline">+ AI & ML EDITION // 2026</span>
+          </div>
         </div>
 
         {/* Small upper-left kicker */}
@@ -184,9 +187,39 @@ export const EditorialHomepage: React.FC<EditorialHomepageProps> = ({
         </div>
 
         {/* ============================================================== */}
+        {/* INFINITE EDITORIAL MARQUEE RIBBON                             */}
+        {/* ============================================================== */}
+        <div className="relative w-screen left-1/2 -translate-x-1/2 overflow-hidden py-3 sm:py-3.5 border-y border-[#111114]/15 bg-[#EBE7DE] select-none my-8 sm:my-12 shadow-xs">
+          <motion.div
+            animate={{ x: ['0%', '-50%'] }}
+            transition={{ ease: 'linear', duration: 28, repeat: Infinity }}
+            className="flex w-max items-center gap-8 text-xs sm:text-sm font-mono tracking-widest uppercase text-[#111114] font-medium"
+          >
+            {[0, 1].map((copyIdx) => (
+              <div key={copyIdx} className="flex items-center gap-8 shrink-0">
+                <span className="font-bold text-[#111114]">COMPUTER SCIENCE & ENGINEERING (AI & ML)</span>
+                <span className="w-1.5 h-1.5 rounded-full bg-[#FF4D36]" />
+                <span>OFFICIAL FIDE RATED: 1505</span>
+                <span className="w-1.5 h-1.5 rounded-full bg-[#FF4D36]" />
+                <span className="font-bold text-[#111114]">OLA FLEET ML INTERNSHIP</span>
+                <span className="w-1.5 h-1.5 rounded-full bg-[#FF4D36]" />
+                <span>JAIN UNIVERSITY · BENGALURU</span>
+                <span className="w-1.5 h-1.5 rounded-full bg-[#FF4D36]" />
+                <span className="font-bold text-[#111114]">PREDICTIVE REGRESSION & SQL</span>
+                <span className="w-1.5 h-1.5 rounded-full bg-[#FF4D36]" />
+                <span>SMART PARK ANALYTICS</span>
+                <span className="w-1.5 h-1.5 rounded-full bg-[#FF4D36]" />
+                <span className="text-[#FF4D36] font-bold">SEMESTER 2 SGPA: 9.435</span>
+                <span className="w-1.5 h-1.5 rounded-full bg-[#FF4D36]" />
+              </div>
+            ))}
+          </motion.div>
+        </div>
+
+        {/* ============================================================== */}
         {/* 2. CENTRAL COLLAGE SECTION: 6 INTERACTIVE OVERLAPPING CARDS     */}
         {/* ============================================================== */}
-        <div className="relative w-full max-w-5xl mx-auto mt-16 sm:mt-24 mb-12">
+        <div className="relative w-full max-w-5xl mx-auto mt-6 sm:mt-10 mb-12">
           
           {/* Subtle instruction pill */}
           <div className="text-center mb-8">
@@ -211,6 +244,18 @@ export const EditorialHomepage: React.FC<EditorialHomepageProps> = ({
                 </span>
               </div>
             </motion.div>
+
+            {/* Left Lateral Editorial Marker */}
+            <div className="absolute -left-6 top-1/2 -translate-y-1/2 -rotate-90 origin-center hidden xl:flex items-center gap-3 text-[10px] font-mono uppercase tracking-[0.3em] text-[#6B6675]/80 pointer-events-none select-none">
+              <span className="w-6 h-[1.5px] bg-[#FF4D36]" />
+              <span>COLLECTIONS // 01–06</span>
+            </div>
+
+            {/* Right Lateral Editorial Marker */}
+            <div className="absolute -right-6 top-1/2 -translate-y-1/2 rotate-90 origin-center hidden xl:flex items-center gap-3 text-[10px] font-mono uppercase tracking-[0.3em] text-[#6B6675]/80 pointer-events-none select-none">
+              <span>EXPLORE ALL ARCHIVES</span>
+              <span className="w-6 h-[1.5px] bg-[#FF4D36]" />
+            </div>
 
             {/* The Six Overlapping Cards */}
             {cards.map((card, idx) => {
@@ -384,6 +429,113 @@ export const EditorialHomepage: React.FC<EditorialHomepageProps> = ({
             ))}
           </div>
 
+          {/* ============================================================== */}
+          {/* KEY ACHIEVEMENTS & CREDENTIALS METRIC STRIP                   */}
+          {/* ============================================================== */}
+          <motion.div
+            initial={{ opacity: 0, y: 25 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
+            className="w-full mt-14 sm:mt-20 pt-10 border-t border-[#111114]/15"
+          >
+            <div className="flex flex-wrap items-center justify-between gap-2 mb-6">
+              <div className="flex items-center gap-2">
+                <span className="w-1.5 h-1.5 rounded-full bg-[#FF4D36]" />
+                <span className="text-xs font-mono uppercase tracking-widest text-[#111114] font-bold">
+                  VERIFIED CREDENTIALS & ACADEMIC STANDING
+                </span>
+              </div>
+              <span className="text-[11px] font-mono text-[#6B6675]">
+                2024–2026 // JAIN UNIVERSITY · BENGALURU
+              </span>
+            </div>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5">
+              
+              {/* Metric 1: Academic SGPA */}
+              <div 
+                onClick={() => {
+                  soundFX.playClick();
+                  onNavigateTo('education');
+                }}
+                className="p-5 sm:p-6 rounded-2xl bg-[#FFFFFF] border border-[#111114]/15 shadow-sm hover:border-[#FF4D36] hover:shadow-md transition-all cursor-pointer group"
+              >
+                <div className="flex items-center justify-between text-[11px] font-mono text-[#6B6675] mb-2 uppercase">
+                  <span>ACADEMIC SGPA</span>
+                  <ArrowUpRight size={14} className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 text-[#6B6675] group-hover:text-[#FF4D36] transition-all" />
+                </div>
+                <div className="font-heading text-3xl sm:text-4xl font-black text-[#111114] tabular-nums tracking-tight">
+                  9.435
+                </div>
+                <p className="text-xs text-[#6B6675] mt-1.5 font-sans leading-snug">
+                  Semester 2 Peak at Jain University · Sem 1: 8.90
+                </p>
+              </div>
+
+              {/* Metric 2: FIDE Chess Rating */}
+              <div 
+                onClick={() => {
+                  soundFX.playClick();
+                  onNavigateTo('beyond-academics');
+                }}
+                className="p-5 sm:p-6 rounded-2xl bg-[#FFFFFF] border border-[#111114]/15 shadow-sm hover:border-[#FF4D36] hover:shadow-md transition-all cursor-pointer group"
+              >
+                <div className="flex items-center justify-between text-[11px] font-mono text-[#6B6675] mb-2 uppercase">
+                  <span>FIDE RATING</span>
+                  <ArrowUpRight size={14} className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 text-[#6B6675] group-hover:text-[#FF4D36] transition-all" />
+                </div>
+                <div className="font-heading text-3xl sm:text-4xl font-black text-[#111114] tabular-nums tracking-tight">
+                  1505
+                </div>
+                <p className="text-xs text-[#6B6675] mt-1.5 font-sans leading-snug">
+                  Official International Chess Federation · Classical/Rapid
+                </p>
+              </div>
+
+              {/* Metric 3: OLA ML Fleet */}
+              <div 
+                onClick={() => {
+                  soundFX.playClick();
+                  onNavigateTo('experience');
+                }}
+                className="p-5 sm:p-6 rounded-2xl bg-[#FFFFFF] border border-[#111114]/15 shadow-sm hover:border-[#FF4D36] hover:shadow-md transition-all cursor-pointer group"
+              >
+                <div className="flex items-center justify-between text-[11px] font-mono text-[#6B6675] mb-2 uppercase">
+                  <span>INDUSTRY WORK</span>
+                  <ArrowUpRight size={14} className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 text-[#6B6675] group-hover:text-[#FF4D36] transition-all" />
+                </div>
+                <div className="font-heading text-2xl sm:text-3xl font-black text-[#111114] tracking-tight uppercase">
+                  OLA ML
+                </div>
+                <p className="text-xs text-[#6B6675] mt-1.5 font-sans leading-snug">
+                  Fleet Telemetry Analysis & Predictive Regression
+                </p>
+              </div>
+
+              {/* Metric 4: Smart Park Lab */}
+              <div 
+                onClick={() => {
+                  soundFX.playClick();
+                  onNavigateTo('experience');
+                }}
+                className="p-5 sm:p-6 rounded-2xl bg-[#FFFFFF] border border-[#111114]/15 shadow-sm hover:border-[#FF4D36] hover:shadow-md transition-all cursor-pointer group"
+              >
+                <div className="flex items-center justify-between text-[11px] font-mono text-[#6B6675] mb-2 uppercase">
+                  <span>AI ANALYTICS</span>
+                  <ArrowUpRight size={14} className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 text-[#6B6675] group-hover:text-[#FF4D36] transition-all" />
+                </div>
+                <div className="font-heading text-2xl sm:text-3xl font-black text-[#111114] tracking-tight uppercase">
+                  SMART PARK
+                </div>
+                <p className="text-xs text-[#6B6675] mt-1.5 font-sans leading-snug">
+                  Wait-Time & Crowd Analytics Experiential System
+                </p>
+              </div>
+
+            </div>
+          </motion.div>
+
         </div>
 
       </section>
@@ -492,7 +644,7 @@ export const EditorialHomepage: React.FC<EditorialHomepageProps> = ({
                   </p>
                 </motion.div>
 
-                {/* Item 2: WonderLab Sentinel */}
+                {/* Item 2: Smart Park */}
                 <motion.div
                   initial={{ opacity: 0, y: 15 }}
                   whileInView={{ opacity: 1, y: 0 }}
@@ -502,7 +654,7 @@ export const EditorialHomepage: React.FC<EditorialHomepageProps> = ({
                 >
                   <div className="flex flex-wrap items-center justify-between gap-2 mb-1.5">
                     <span className="text-sm font-bold text-white uppercase tracking-wide">
-                      WonderLab Sentinel · Mathematics Project
+                      Smart Park · Mathematics & Analytics Project
                     </span>
                     <a
                       href="https://wonderlab-sentinel.vercel.app/"
@@ -515,7 +667,7 @@ export const EditorialHomepage: React.FC<EditorialHomepageProps> = ({
                     </a>
                   </div>
                   <p className="text-xs text-[#A8A0B8] leading-relaxed">
-                    College mathematics experiential learning project based on Wonderla amusement park. Allows users to explore thrill rides, evaluate park experiences, and book admission tickets through an integrated digital workflow.
+                    AI-powered theme park analytics and mathematics experiential learning system. Features mathematical crowd modeling, real-time wait-time analytics, zone exploration, and admission workflows.
                   </p>
                 </motion.div>
 
@@ -537,21 +689,21 @@ export const EditorialHomepage: React.FC<EditorialHomepageProps> = ({
 
           </div>
 
-          {/* LOWER COMPACT SKILLS OVERVIEW - Scroll-triggered reveal */}
+          {/* LOWER TECHNICAL CAPABILITIES MATRIX - Replaces generic pills with high-value editorial cards */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.25 }}
+            viewport={{ once: true, amount: 0.2 }}
             transition={{ duration: 0.7, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
-            className="pt-10 border-t border-white/10"
+            className="pt-12 border-t border-white/10"
           >
-            <div className="flex flex-wrap items-center justify-between gap-4 mb-6">
+            <div className="flex flex-wrap items-center justify-between gap-4 mb-8">
               <div className="flex items-center gap-3">
                 <span className="text-xs font-mono text-[#FF4D36] uppercase font-bold tracking-widest">
                   03 //
                 </span>
-                <h3 className="font-heading text-lg sm:text-xl font-bold uppercase text-white">
-                  CORE TECHNICAL PROFICIENCIES
+                <h3 className="font-heading text-xl sm:text-2xl font-black uppercase text-white tracking-tight">
+                  CORE TECHNICAL CAPABILITIES
                 </h3>
               </div>
 
@@ -560,37 +712,86 @@ export const EditorialHomepage: React.FC<EditorialHomepageProps> = ({
                   soundFX.playClick();
                   onNavigateTo('skills');
                 }}
-                className="text-xs font-mono uppercase font-semibold text-[#FF4D36] hover:underline cursor-pointer"
+                className="inline-flex items-center gap-2 text-xs font-mono uppercase font-bold tracking-widest text-[#FF4D36] hover:text-white transition-colors cursor-pointer group"
               >
-                VIEW FULL SKILLS BREAKDOWN →
+                <span>VIEW FULL SKILLS BREAKDOWN</span>
+                <ArrowRight size={13} className="group-hover:translate-x-1 transition-transform" />
               </button>
             </div>
 
-            <div className="flex flex-wrap gap-2 text-xs">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
               {[
-                'Python',
-                'C Language',
-                'SQL',
-                'Pandas',
-                'NumPy',
-                'Matplotlib',
-                'Machine Learning Fundamentals',
-                'Prompt Engineering (Claude, ChatGPT)',
-                'Object-Oriented Programming (OOP)',
-                'Data Structures & Algorithms',
-                'Git & GitHub',
-                'Visual Studio Code'
-              ].map((skill, sIdx) => (
-                <motion.span
-                  key={skill}
-                  initial={{ opacity: 0, scale: 0.9 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.3, delay: 0.05 * (sIdx % 6) }}
-                  className="px-3.5 py-1.5 rounded-lg bg-[#1D1B24] border border-white/10 text-[#D2C8E4] font-medium"
+                {
+                  id: '01',
+                  category: 'LANGUAGES & DATA',
+                  title: 'Python Scientific Computing',
+                  desc: 'Comprehensive data wrangling and numerical analysis leveraging NumPy, Pandas, and Matplotlib visualizations.',
+                  tags: 'NumPy · Pandas · Matplotlib · Scripting',
+                },
+                {
+                  id: '02',
+                  category: 'APPLIED ML',
+                  title: 'Predictive Regression & Telemetry',
+                  desc: 'Applied machine learning models trained on automotive telemetry (VIN and distance metrics) at OLA Electric.',
+                  tags: 'Linear Regression · Vehicle Telemetry · Scikit-Learn',
+                },
+                {
+                  id: '03',
+                  category: 'SYSTEMS & STORAGE',
+                  title: 'SQL & Database Optimization',
+                  desc: 'Database queries, relational schemas, aggregation pipelines, and high-performance data extraction.',
+                  tags: 'PostgreSQL · MySQL · Complex Joins · Indexing',
+                },
+                {
+                  id: '04',
+                  category: 'LOW-LEVEL PROGRAMMING',
+                  title: 'C Systems & Computational Logic',
+                  desc: 'Pointers, memory layout, structural execution, and fundamental algorithmic logic for high-efficiency code.',
+                  tags: 'Memory Architecture · Data Structures · Pointer Logic',
+                },
+                {
+                  id: '05',
+                  category: 'MODERN AI',
+                  title: 'Prompt Engineering & LLM Context',
+                  desc: 'System prompt design, few-shot prompting, and chain-of-thought orchestration for high-accuracy reasoning.',
+                  tags: 'Claude · ChatGPT · Context Engineering · Workflows',
+                },
+                {
+                  id: '06',
+                  category: 'CORE CS FOUNDATIONS',
+                  title: 'Engineering & Version Control',
+                  desc: 'Object-oriented programming, modular system design, Git collaborative workflows, and Linux command environments.',
+                  tags: 'OOP · Git & GitHub · Linux CLI · VS Code',
+                },
+              ].map((item, idx) => (
+                <motion.div
+                  key={item.id}
+                  initial={{ opacity: 0, y: 15 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, amount: 0.3 }}
+                  transition={{ duration: 0.45, delay: 0.08 * idx }}
+                  onClick={() => {
+                    soundFX.playClick();
+                    onNavigateTo('skills');
+                  }}
+                  className="p-5 sm:p-6 rounded-xl bg-[#1A1820] border border-white/10 hover:border-[#FF4D36]/60 transition-all cursor-pointer group flex flex-col justify-between"
                 >
-                  {skill}
-                </motion.span>
+                  <div>
+                    <div className="flex items-center justify-between text-xs font-mono text-[#6B6675] mb-2.5">
+                      <span className="text-[#FF4D36] font-bold">{item.id} // {item.category}</span>
+                      <ArrowUpRight size={14} className="text-[#6B6675] group-hover:text-[#FF4D36] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all" />
+                    </div>
+                    <h4 className="text-base font-bold text-white uppercase tracking-wide group-hover:text-[#FF4D36] transition-colors mb-2">
+                      {item.title}
+                    </h4>
+                    <p className="text-xs text-[#A8A0B8] leading-relaxed mb-4">
+                      {item.desc}
+                    </p>
+                  </div>
+                  <div className="pt-3 border-t border-white/10 text-[11px] font-mono text-[#FF4D36]/80">
+                    {item.tags}
+                  </div>
+                </motion.div>
               ))}
             </div>
           </motion.div>

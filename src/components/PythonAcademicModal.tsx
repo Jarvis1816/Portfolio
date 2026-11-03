@@ -61,7 +61,7 @@ def skills():
 
 @app.route('/experience')
 def experience():
-    """Renders OLA ML Internship & WonderLab Sentinel Project"""
+    """Renders OLA ML Internship & Smart Park Project"""
     return render_template('experience.html', data=PORTFOLIO_DATA)
 
 @app.route('/beyond')
@@ -258,7 +258,7 @@ if __name__ == '__main__':
                   <div>│   ├── about.html             <span className="text-[#6B6675] text-[11px]"># Profile & narrative</span></div>
                   <div>│   ├── education.html         <span className="text-[#6B6675] text-[11px]"># SGPA & timeline</span></div>
                   <div>│   ├── skills.html            <span className="text-[#6B6675] text-[11px]"># Tech stacks & concepts</span></div>
-                  <div>│   ├── experience.html        <span className="text-[#6B6675] text-[11px]"># OLA & WonderLab</span></div>
+                  <div>│   ├── experience.html        <span className="text-[#6B6675] text-[11px]"># OLA & Smart Park</span></div>
                   <div>│   ├── beyond.html            <span className="text-[#6B6675] text-[11px]"># Chess, sports, YouTube</span></div>
                   <div>│   └── contact.html           <span className="text-[#6B6675] text-[11px]"># Direct contact form</span></div>
                   <div>└── static/</div>

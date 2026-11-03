@@ -3,9 +3,7 @@ import {
   ArrowLeft, 
   FileDown, 
   Volume2, 
-  VolumeX, 
-  Code,
-  Sparkles
+  VolumeX
 } from 'lucide-react';
 import { SectionId } from '../types';
 import { soundFX } from '../utils/audio';
@@ -13,28 +11,17 @@ import { soundFX } from '../utils/audio';
 interface EditorialHeaderProps {
   currentSection: SectionId;
   onNavigateHome: () => void;
-  onNavigateTo: (section: SectionId) => void;
+  onNavigateTo?: (section: SectionId) => void;
   onOpenResume: () => void;
-  onOpenPythonGuide: () => void;
+  onOpenPythonGuide?: () => void;
   isMuted: boolean;
   onToggleMute: () => void;
 }
 
-const NAV_ROUTES: { id: SectionId; label: string }[] = [
-  { id: 'about', label: 'About' },
-  { id: 'education', label: 'Education' },
-  { id: 'skills', label: 'Skills' },
-  { id: 'experience', label: 'Experience' },
-  { id: 'beyond-academics', label: 'Beyond' },
-  { id: 'contact', label: 'Contact' },
-];
-
 export const EditorialHeader: React.FC<EditorialHeaderProps> = ({
   currentSection,
   onNavigateHome,
-  onNavigateTo,
   onOpenResume,
-  onOpenPythonGuide,
   isMuted,
   onToggleMute,
 }) => {
@@ -84,47 +71,8 @@ export const EditorialHeader: React.FC<EditorialHeaderProps> = ({
           )}
         </div>
 
-        {/* Center Zone: Clean Editorial Nav Links for Desktop */}
-        <nav className="hidden lg:flex items-center gap-6 text-xs font-semibold uppercase tracking-wider">
-          {NAV_ROUTES.map((route) => {
-            const isActive = currentSection === route.id;
-            return (
-              <button
-                key={route.id}
-                onClick={() => {
-                  soundFX.playClick();
-                  onNavigateTo(route.id);
-                }}
-                onMouseEnter={() => soundFX.playHover()}
-                className={`relative py-1 transition-colors cursor-pointer ${
-                  isActive
-                    ? 'text-[#FF4D36]'
-                    : 'text-[#111114] hover:text-[#FF4D36]'
-                }`}
-              >
-                {route.label}
-                {isActive && (
-                  <span className="absolute bottom-0 left-0 right-0 h-[2px] bg-[#FF4D36]" />
-                )}
-              </button>
-            );
-          })}
-        </nav>
-
-        {/* Right Zone: Actions */}
+        {/* Right Zone: Actions (Resume CTA and Sound Toggle) */}
         <div className="flex items-center gap-2 sm:gap-3">
-          {/* Academic Python Project button */}
-          <button
-            onClick={() => {
-              soundFX.playClick();
-              onOpenPythonGuide();
-            }}
-            className="flex items-center gap-1.5 px-3 py-1.5 text-xs font-semibold text-[#111114] bg-[#FFFFFF] border border-[#111114]/15 rounded-lg hover:border-[#FF4D36] hover:text-[#FF4D36] transition-all cursor-pointer whitespace-nowrap shadow-xs"
-            title="Academic Python Project documentation & Flask bundle"
-          >
-            <Code size={13} className="text-[#FF4D36]" />
-            <span className="hidden md:inline">Academic Python (Flask)</span>
-          </button>
 
           {/* Resume Download CTA */}
           <button
