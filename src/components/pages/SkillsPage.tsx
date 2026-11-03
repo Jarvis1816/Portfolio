@@ -193,6 +193,68 @@ export const SkillsPage: React.FC<SkillsPageProps> = ({ onNavigateTo }) => {
             </motion.div>
           );
         })}
+
+        {/* Looping Dev Video Card - Placed beside Prompt Engineering & LLM Context */}
+        {(activeFilter === 'all' || activeFilter === 'ai') && (
+          <motion.div
+            initial={{ opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.35 }}
+            className="p-6 rounded-2xl bg-[#FFFFFF] border border-[#111114]/15 hover:border-[#FF4D36] transition-all shadow-collage flex flex-col justify-between group overflow-hidden"
+          >
+            <div>
+              <div className="flex items-center justify-between gap-3 mb-4">
+                <div className="flex items-center gap-3">
+                  <div className="w-10 h-10 rounded-xl bg-[#F5F2EB] border border-[#111114]/15 flex items-center justify-center text-[#FF4D36] group-hover:scale-105 transition-transform">
+                    <Sparkles size={20} />
+                  </div>
+                  <div>
+                    <h2 className="font-heading text-lg font-black text-[#111114] uppercase">
+                      Dev Flow & Rapid Prompting
+                    </h2>
+                    <p className="text-xs text-[#6B6675]">
+                      Iterative model experimentation & high-speed typing flow
+                    </p>
+                  </div>
+                </div>
+
+                <span className="px-2.5 py-1 rounded-md bg-[#111114] text-white text-[10px] font-mono uppercase font-bold tracking-wider shrink-0">
+                  DEV CAM
+                </span>
+              </div>
+
+              {/* Looping Keyboard Cat Video Frame */}
+              <div className="relative rounded-xl overflow-hidden border border-[#111114]/20 bg-[#111114] shadow-inner aspect-[16/10] sm:aspect-[16/11]">
+                <video
+                  src="/assets/videos/skills_cat_keyboard.mp4"
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                  preload="auto"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                />
+
+                <div className="absolute top-2.5 left-2.5 px-2 py-0.5 rounded bg-black/80 backdrop-blur-md text-[9px] font-mono text-white flex items-center gap-1.5 font-bold">
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#FF4D36] animate-ping" />
+                  <span>60 FPS // LOOP</span>
+                </div>
+
+                <div className="absolute bottom-2.5 right-2.5 px-2 py-0.5 rounded bg-black/80 backdrop-blur-md text-[9px] font-mono text-[#FF4D36] font-bold">
+                  120 WPM · FLOW STATE
+                </div>
+              </div>
+            </div>
+
+            <div className="mt-4 pt-3 border-t border-[#111114]/10 flex items-center justify-between text-xs font-mono text-[#6B6675]">
+              <span className="flex items-center gap-1.5">
+                <span className="w-2 h-2 rounded-full bg-emerald-500" />
+                Active Terminal Session
+              </span>
+              <span className="text-[#111114] font-semibold">Claude · ChatGPT · VS Code</span>
+            </div>
+          </motion.div>
+        )}
       </div>
 
       {/* Career Interests Focus Box */}
