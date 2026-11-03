@@ -1,0 +1,80 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --bg-cream: #F5F2EB;
+    --bg-card: #FFFFFF;
+    --bg-dark: #111114;
+    --coral-accent: #FF4D36;
+    --text-primary: #111114;
+    --text-secondary: #6B6675;
+    --border-light: rgba(17, 17, 20, 0.12);
+  }
+
+  body {
+    font-family: 'Plus Jakarta Sans', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    background-color: #F5F2EB;
+    color: #111114;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, h4, h5, h6, .font-heading {
+    font-family: 'Syne', 'Space Grotesk', sans-serif;
+  }
+}
+
+/* Editorial typography and stroke effects */
+.text-outline-black {
+  -webkit-text-stroke: 2px #111114;
+  color: transparent;
+}
+
+.text-outline-coral {
+  -webkit-text-stroke: 2px #FF4D36;
+  color: transparent;
+}
+
+.text-outline-white {
+  -webkit-text-stroke: 2px #F5F2EB;
+  color: transparent;
+}
+
+/* Paper-like subtle grid */
+.bg-editorial-grid {
+  background-size: 32px 32px;
+  background-image: 
+    linear-gradient(to right, rgba(17, 17, 20, 0.03) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(17, 17, 20, 0.03) 1px, transparent 1px);
+}
+
+.bg-dark-grid {
+  background-size: 32px 32px;
+  background-image: 
+    linear-gradient(to right, rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+}
+
+/* Card drop shadows for layered collage */
+.shadow-collage {
+  box-shadow: 0 16px 36px -12px rgba(17, 17, 20, 0.22), 0 4px 12px -2px rgba(17, 17, 20, 0.08);
+}
+
+.shadow-collage-hover {
+  box-shadow: 0 24px 48px -12px rgba(17, 17, 20, 0.35), 0 8px 16px -2px rgba(17, 17, 20, 0.12);
+}
+
+/* Custom sleek scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #F5F2EB;
+}
+::-webkit-scrollbar-thumb {
+  background: #D5D0C5;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #FF4D36;
+}
+
